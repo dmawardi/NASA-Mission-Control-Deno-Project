@@ -1,6 +1,5 @@
-import { Application, send } from "https://deno.land/x/oak@v10.6.0/mod.ts";
+import { Application, send, log } from "./deps.ts";
 import api from "./api.ts";
-import * as log from "https://deno.land/std/log/mod.ts";
 
 const app = new Application();
 const port = 8000;
@@ -73,6 +72,7 @@ app.use(async (ctx: any) => {
     "/javascripts/script.js",
     "/stylesheets/style.css",
     "/images/favicon.ico",
+    "/videos/space.mp4",
   ];
   //   If the file path is included in the whitelist
   if (fileWhitelist.includes(filePath)) {

@@ -1,5 +1,4 @@
-import * as log from "https://deno.land/std/log/mod.ts";
-import * as _ from "https://deno.land/x/lodash@4.17.15-es/lodash.js";
+import { log, _ } from "../deps.ts";
 
 // Interfaces
 interface Launch {
@@ -30,7 +29,6 @@ async function downloadLaunchData() {
     log.warning("Problem downloading launch data.");
     throw new Error("Launch data download failed.");
   }
-  //   console.log("response: ", response);
   const launchData = await response.json();
   for (const launch of launchData) {
     // Extract payload data
@@ -63,7 +61,6 @@ async function downloadLaunchData() {
 // main indicates if its being used as main file or imported
 await downloadLaunchData();
 log.info(`Downloaded data for ${launches.size} SpaceX launches`);
-// console.log("response.data: ", response);
 
 export function getAll() {
   // Build array from map values

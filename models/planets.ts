@@ -1,7 +1,5 @@
-import { join } from "https://deno.land/std/path/mod.ts";
-import { BufReader } from "https://deno.land/std/io/bufio.ts";
-import { parse } from "https://deno.land/std/encoding/csv.ts";
-import * as _ from "https://deno.land/x/lodash@4.17.15-es/lodash.js";
+import { join, BufReader, parse } from "../deps.ts";
+import { _ } from "../deps.ts";
 
 // now `_` is imported in the global variable, which in deno is `self`
 // const _ = (self as any)._;

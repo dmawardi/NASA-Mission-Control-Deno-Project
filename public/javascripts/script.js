@@ -34,7 +34,6 @@ async function loadPlanets() {
 
   // Send GET request then convert to json
   const planets = await fetch("/planets").then((response) => response.json());
-  // console.log("planets: ", planets);
 
   planets.forEach((planet) => {
     planetSelector.innerHTML += `<option value="${planet.kepler_name}">${planet.kepler_name}</option>`;
@@ -56,8 +55,6 @@ function submitLaunch() {
   const mission = document.getElementById("mission-name").value;
   const rocket = document.getElementById("rocket-name").value;
   const flightNumber = launches[launches.length - 1].flightNumber + 1;
-  console.log("flightNumber sending: ", flightNumber);
-  console.log("launches last item: ", launches[launches.length - 1]);
 
   return fetch("/launches", {
     method: "POST",
