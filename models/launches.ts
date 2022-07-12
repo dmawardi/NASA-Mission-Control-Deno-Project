@@ -1,6 +1,7 @@
 import * as log from "https://deno.land/std/log/mod.ts";
 import * as _ from "https://deno.land/x/lodash@4.17.15-es/lodash.js";
 
+// Interfaces
 interface Launch {
   flightNumber: number;
   mission: string;
